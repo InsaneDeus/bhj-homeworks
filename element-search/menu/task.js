@@ -6,16 +6,20 @@ let menuMain = document.getElementsByClassName("menu_main");
 for(let i = 0; i < menuItem.length; i++){
         menuLink[i].addEventListener("click" , function(e) {
             if(menuItem[i].querySelector(".menu_sub") != null){
-                    for(let ii = 0; ii < menuMain.length; ii++){
-                        if(menuMain[ii] === menuItem[i].closest(".menu_main")){
-                            if(menuMain[ii].querySelector(".menu_active") != null){
-                                menuMain[ii].querySelector(".menu_active").classList.remove("menu_active");
-                            };
+                e.preventDefault();
+                if(menuItem[i].querySelector(".menu_sub").classList.contains("menu_active")){
+                    menuItem[i].querySelector(".menu_sub").classList.remove("menu_active");
+                }
+                else{
+                for(let j = 0; j < menuMain.length; j++){
+                    if(menuMain[j] === menuItem[i].closest(".menu_main")){
+                        if(menuMain[j].querySelector(".menu_active") != null){
+                            menuMain[j].querySelector(".menu_active").classList.remove("menu_active");
                         };
                     };
-                    
-                    menuItem[i].querySelector(".menu_sub").classList.add("menu_active");
-                    e.preventDefault();  
-                };   
+                };
+                menuItem[i].querySelector(".menu_sub").classList.add("menu_active");
+                };      
+            };
         });
 };
