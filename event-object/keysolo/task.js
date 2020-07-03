@@ -17,15 +17,12 @@ class Game {
   }
 
   registerEvents() {
-    let symbol = this.currentSymbol.textContent;
-    let successIn = this.success;
-    let failIn = this.fail;
-      addEventListener("keydown", function(e){
-        if(symbol.toUpperCase().charCodeAt(0) === e.keyCode){
-          return successIn();
+      addEventListener("keydown", (e) => {
+        if(this.currentSymbol.textContent.toUpperCase().charCodeAt(0) === e.keyCode){
+          return this.success();
         }
         else{
-          return failIn();
+          return this.fail();
         };
       });
   }
