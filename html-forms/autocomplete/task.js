@@ -76,7 +76,7 @@ class Autocomplete {
         arrResult.push(
           {
             text: item.innerHTML,
-            value: item.getAttribute("value")
+            value: item.getAttribute("value").value
           }
         )
       }
