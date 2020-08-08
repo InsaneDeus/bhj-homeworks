@@ -7,7 +7,6 @@ button.addEventListener("click", function(e) {
     e.preventDefault();
 
     if(input.value !== ""){
-       // taskList.innerHTML = taskList.innerHTML + '<div  class="task"><div class="task__title">' + input.value + '</div><a href="#"class="task__remove"> &times;</a></div>';
 
         taskList.insertAdjacentHTML("beforeend", '<div  class="task"><div class="task__title">' + input.value + '</div><a href="#"class="task__remove" onclick = ""> &times;</a></div>');
 
