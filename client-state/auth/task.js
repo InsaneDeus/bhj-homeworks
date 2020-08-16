@@ -3,7 +3,7 @@ const signinBtn = document.getElementById("signin__btn");
 const welcome = document.getElementById("welcome");
 const userId = document.getElementById("user_id");
 
-if(localStorage.id =){
+if(localStorage.id){
     welcome.classList.add("welcome_active");
     userId.textContent = localStorage.id;
 }
